@@ -8,68 +8,110 @@
 </head>
 <body>
     <header>
-        <div class="container">
+        <div class="header-content">
             <h1>PICMINTON</h1>
-            <nav>
-                <ul>
-                    <li><a href="#about">サークルについて</a></li>
-                    <li><a href="#activities">活動内容</a></li>
-                    <li><a href="#members">メンバー</a></li>
-                    <li><a href="#events">イベント情報</a></li>
-                    <li><a href="#contact">連絡先</a></li>
-                </ul>
-            </nav>
+        </div>
+        <div class="header-images">
+            <img src="images/picmin.webp" class="header-img" alt="Image 1">
+            <img src="images/pikmin.avif" class="header-img" alt="Image 2">
+            <img src="images/pikmin-pikmin-3-wallpaper-preview.jpg" class="header-img" alt="Image 3">
         </div>
     </header>
 
+    <!-- ナビゲーションメニュー -->
+    <nav>
+        <ul>
+            <li><a href="#about">サークルについて</a></li>
+            <li><a href="#activities">活動内容</a></li>
+            <li><a href="#members">メンバー</a></li>
+            <li><a href="#events">イベント情報</a></li>
+            <li><a href="#contact">連絡先</a></li>
+        </ul>
+    </nav>
+
     <section id="about" class="section">
         <div class="container">
-            <h2>サークルについて</h2>
-            <p>私たちのサークルは、○○を目的に活動しています。仲間と共に楽しみながら学び、成長しています。</p>
+            <h2>PICMINTON へようこそ！</h2>
+            <p>
+                私たちのサークルは、バトミントンを通じて楽しさを感じながら、技術向上を目指す仲間たちが集まる場所です。初心者から経験者まで、どんなレベルの方でも歓迎しています。定期的な練習や親睦イベントを通じて、技術向上だけでなく、メンバー同士の絆も深めています。新しい仲間と一緒に楽しく汗をかきながら、バトミントンを楽しんでいきましょう！</p>
         </div>
     </section>
 
     <section id="activities" class="section">
         <div class="container">
-            <h2>活動内容</h2>
-            <p>定期的に○○イベントを開催したり、勉強会を行っています。</p>
-            <ul>
-                <li>○○イベント</li>
-                <li>○○勉強会</li>
-                <li>○○大会</li>
-            </ul>
+            <h2>活動予定日</h2>
+            <div class="activity-content">
+                <img src="images/12Schedule.jpg" alt="活動写真" class="activity-image">
+                <div class="activity-description">
+                    <p>こちらは今後の活動予定日です。参加希望の方は、LINEで参加してください</p>
+                    <ul>
+                        <li><span class="circle red">〇</span> 通常練習</li>
+                        <li><span class="circle yellow">〇</span> オーパス練習</li>
+                        <li><span class="circle green">〇</span> クリスマスパーティー</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
+    
 
-    <section id="members" class="section">
-        <div class="container">
-            <h2>メンバー</h2>
-            <p>現在のメンバーは以下の通りです：</p>
-            <ul>
-                <li>メンバー1: 役職</li>
-                <li>メンバー2: 役職</li>
-                <li>メンバー3: 役職</li>
-            </ul>
-        </div>
-    </section>
+    
 
-    <section id="events" class="section">
+    <section id="past-events" class="section">
         <div class="container">
-            <h2>イベント情報</h2>
-            <p>次回のイベントについてのお知らせです：</p>
-            <ul>
-                <li>イベント名 - 日時 - 場所</li>
-                <li>イベント名 - 日時 - 場所</li>
-            </ul>
+            <h2>過去のイベント</h2>
+            <p>こちらでは、これまでに開催したイベントを紹介します。</p>
+            <div class="event-list">
+                <div class="event">
+                    <h3>春のバトミントン大会</h3>
+                    <p class="date">2024年4月10日</p>
+                    <img src="images/spring-tournament.jpg" alt="春のバトミントン大会" class="event-img">
+                    <p>毎年恒例の春のバトミントン大会が開催されました。参加者全員で真剣にプレーし、楽しいひとときを過ごしました。今年は新しいチーム編成で、白熱した試合が展開されました！</p>
+                </div>
+                <div class="event">
+                    <h3>夏の親睦パーティー</h3>
+                    <p class="date">2024年7月15日</p>
+                    <img src="images/summer-party.jpg" alt="夏の親睦パーティー" class="event-img">
+                    <p>サークルメンバーとその家族が集まる夏の親睦パーティー。バーベキューを楽しみながら、お互いの交流を深めました。新しいメンバーも参加し、盛り上がったイベントでした。</p>
+                </div>
+                <div class="event">
+                    <h3>秋のバトミントン交流会</h3>
+                    <p class="date">2024年10月5日</p>
+                    <img src="images/fall-meetup.jpg" alt="秋のバトミントン交流会" class="event-img">
+                    <p>秋の爽やかな気候の中で行われたバトミントン交流会。多くのメンバーが集まり、リラックスした雰囲気の中で楽しいゲームが繰り広げられました。新しいテクニックを学びながら、仲間との絆が深まりました。</p>
+                </div>
+                <div class="event">
+                    <h3>クリスマスパーティー</h3>
+                    <p class="date">2024年12月20日</p>
+                    <img src="images/christmas-party.jpg" alt="クリスマスパーティー" class="event-img">
+                    <p>毎年恒例のクリスマスパーティー。今年もサークルメンバーが集まり、楽しいゲームとプレゼント交換をしました。バトミントンをテーマにしたコンテストもあり、大いに盛り上がりました！</p>
+                </div>
+            </div>
         </div>
     </section>
+    
+
+    <section id="faq" class="section">
+        <div class="container">
+            <h2>よくある質問</h2>
+            <div class="faq-item">
+                <h3>Q: 参加に特別な条件はありますか？</h3>
+                <p>A: 特別な条件はありません。初心者の方も大歓迎です！</p>
+            </div>
+            <div class="faq-item">
+                <h3>Q: 参加費はかかりますか？</h3>
+                <p>A: 参加費は基本的に無料ですが、イベントによっては費用がかかる場合があります。</p>
+            </div>
+        </div>
+    </section>
+    
 
     <section id="contact" class="section">
         <div class="container">
             <h2>連絡先</h2>
             <p>サークルへのお問い合わせは、以下の方法でご連絡ください。</p>
             <p>Email: info@example.com</p>
-           
+            <p>Twitter: <a href="https://twitter.com/example" target="_blank">@example</a></p>
         </div>
     </section>
 
@@ -78,5 +120,7 @@
             <p>&copy; 2024 PICMINTON. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
