@@ -18,39 +18,132 @@ body {
 
 /* ヘッダー */
 header {
-  background-image: url('images/picmin.webp'); /* 画像を背景に指定 */
-  background-size: cover; /* 画像がヘッダー全体をカバーするように調整 */
-  background-position: center center; /* 画像の中央が表示されるように設定 */
-  color: black; /* ヘッダー内の文字色を黒に設定 */
-  padding: 100px 0; /* ヘッダーの高さを調整 */
+  position: relative;
+  height: 400px;
+  color: white;
   text-align: center;
 }
 
-header h1 {
-  font-size: 3rem; /* ヘッダーの文字の大きさ */
-  color: black; /* 見出し文字色を黒に設定 */
+.header-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
 }
 
+header h1 {
+  font-size: 3rem;
+  color: black;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* 画像スライダー */
+.header-images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.header-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: slide 15s infinite;
+}
+
+@keyframes slide {
+  0% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 0;
+  }
+  66% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.header-images img:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.header-images img:nth-child(2) {
+  animation-delay: 5s;
+}
+
+.header-images img:nth-child(3) {
+  animation-delay: 10s;
+}
+
+/* ナビゲーション */
 nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 20px; /* ヘッダー画像下に余白を追加 */
+  padding: 0;
+  background-color: white; /* 背景色を設定してメニューが見やすく */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* ボックスシャドウを追加 */
+  flex-wrap: wrap; /* メニュー項目が画面幅に収まらないときに折り返す */
 }
 
 nav ul li {
-  margin: 0 15px;
+  margin: 5px 10px; /* 余白を少し調整 */
 }
 
 nav ul li a {
-  color: black; /* ナビゲーションリンクの文字色を黒に設定 */
-  text-decoration: none;
+  display: block;
+  padding: 12px 25px;
+  background-color: #f4f4f4;
+  color: #333;
   font-size: 18px;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 5px 5px 0 0;
+  border: 1px solid #ddd;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  min-width: 150px; /* 各リンクの最小幅を設定 */
 }
 
 nav ul li a:hover {
-  text-decoration: underline;
+  background-color: #ddd;
+  transform: scale(1.05);
 }
+
+nav ul li a.active {
+  background-color: #28a745;
+  color: white;
+  border-color: #28a745;
+}
+
+/* モバイル用の調整（画面幅が小さい場合） */
+@media (max-width: 768px) {
+  nav ul {
+    justify-content: flex-start; /* メニュー項目を左に寄せる */
+    padding-left: 0; /* 左の余白を削除 */
+  }
+
+  nav ul li {
+    flex: 1 0 100%; /* 各メニュー項目を1列に並べる */
+    text-align: left; /* 左揃えにする */
+  }
+
+  nav ul li a {
+    padding: 12px 15px; /* モバイル用にパディングを調整 */
+    font-size: 16px; /* フォントサイズを少し小さくする */
+  }
+}
+
 
 /* セクション */
 .section {
@@ -88,15 +181,99 @@ footer p {
 /* レスポンシブデザイン */
 @media (max-width: 768px) {
   nav ul {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   nav ul li {
-      margin: 10px 0;
+    margin: 10px 0;
   }
 
   .container {
-      width: 90%;
+    width: 90%;
+  }
+}
+/* 活動予定日セクション */
+.activity-content {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.activity-image {
+  width: 30%; /* 画像の幅を30%に設定（小さくしたい場合） */
+  margin-right: 20px; /* 画像と説明の間に余白を追加 */
+  border-radius: 8px; /* 画像に角丸を追加 */
+  object-fit: cover; /* 画像が枠内に収まるように調整 */
+}
+
+.activity-description ul li {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.circle {
+  font-size: 20px; /* 〇の大きさ */
+  margin-right: 10px; /* 〇とテキストの間隔 */
+}
+
+/* 色の設定 */
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.yellow {
+  color: rgb(234, 234, 4);
+}
+/* イベントのリストのレイアウト */
+.event-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2列に設定 */
+  grid-gap: 20px; /* セル間の間隔 */
+  margin-top: 20px;
+}
+
+.event {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.event-img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.event h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.event .date {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.event p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* モバイルサイズや小さいスクリーンサイズ用のレスポンシブ */
+@media (max-width: 768px) {
+  .event-list {
+    grid-template-columns: 1fr; /* スクリーンが小さい場合は1列にする */
   }
 }
